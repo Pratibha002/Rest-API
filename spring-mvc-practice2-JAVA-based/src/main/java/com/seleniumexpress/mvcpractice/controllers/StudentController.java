@@ -3,16 +3,20 @@ package com.seleniumexpress.mvcpractice.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 //controller class
 @Controller
 public class StudentController {
 	//@ResponseBody
 	@RequestMapping("/aaa") 	
-	public  String Student() {
+	public  String Student(@RequestParam("name") String userName,@RequestParam("mobile") String userMob,@RequestParam("city") String userCity ) {
 		System.out.println("StudentController object created...");
+		System.out.println("*** :"+userName);
+		System.out.println("*** :"+userMob);
+		System.out.println("*** :"+userCity);
 		JDBC_Connectivity obj=new JDBC_Connectivity();
-		obj.createConnection();
+		obj.createConnection(userName,userMob,userCity);
 		
 		return "aman";
 	

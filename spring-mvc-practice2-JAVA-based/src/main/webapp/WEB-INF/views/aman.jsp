@@ -8,6 +8,10 @@
 </head>
 <body>
 <h1>Student Home </h1>
-  Aman bhaiya's new web page...
+ Aman bhaiya's new web page...<br/>
+ Data inserted.....
+ 
+  
+ 
 </body>
 </html>

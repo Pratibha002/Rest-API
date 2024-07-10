@@ -2,6 +2,7 @@ package com.seleniumexpress.mvcpractice.controllers;//it is a model classs
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 public class JDBC_Connectivity {
@@ -17,12 +18,12 @@ public class JDBC_Connectivity {
 	public static void main(String [] args) {
 		
 		JDBC_Connectivity obj =new JDBC_Connectivity();
-		obj.createConnection();
+		obj.createConnection(null, null, null);
 		
 	}
 	  
 	static Connection con; //the type of con is Connection which belong to the sql package
-	public void  createConnection() {
+	public void  createConnection(String name, String mobile, String city) {
 		
 		try {
 			//load the driver
@@ -36,11 +37,18 @@ public class JDBC_Connectivity {
 			con=DriverManager.getConnection(url, user, password);	
 			//String query="select * from students";
 			//String query2="insert into students values('lmn',1234567789,'xyz')";
-			String query2="insert into students((sname,sphone, scity) values(?,?,?))";
+			String query2="insert into students(sname,sphone, scity) values(?,?,?)";
 			
-			Statement st= con.createStatement();
+			PreparedStatement st= con.prepareStatement(query2);
 			//st.executeQuery(query);
-			st.executeUpdate(query2); 
+			
+			//dynamic insertion
+			st.setString(1, name);
+			st.setString(2, mobile);
+			st.setString(3, city);
+			
+
+			st.executeUpdate();
 			System.out.print("Successfully executed!!");
 		}catch(Exception e) {
 			//handle exception
