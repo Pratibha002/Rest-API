@@ -12,6 +12,7 @@ public class MyConfigurationFile {
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		return new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
+		
 	}
 
 }
