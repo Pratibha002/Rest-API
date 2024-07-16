@@ -9,12 +9,12 @@
 </head>
 <body>
 <h1>Student Home </h1>
-Anurag bhaiya's new web page...
+Anurag bhaiya's new web page....
 
 <form action="./student.com/aaa">
-  <input type="text" name="name" placeholder="Enter name"/>
-  <input type="text" name="mobile" placeholder="Enter Phone No."/>
-  <input type="text" name="city" placeholder="Enter City"/>
+  <input type="text" name="name" placeholder="Enter name"/><br><br>
+  <input type="text" name="mobile" placeholder="Enter Phone No."/><br><br>
+  <input type="text" name="city" placeholder="Enter City"/><br><br>
   <input type="submit" value="Submit" />
   </form>
 </body>

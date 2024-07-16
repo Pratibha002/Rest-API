@@ -11,7 +11,7 @@
   Pratibha's new web page...
   <form>
   <input type="text" name="name" placeholder="Enter name"/>
-  <input type="email" namr="email" placeholder="Enter email"/>
+  <input type="email" name="email" placeholder="Enter email"/>
   <input type="submit" value="login" />
   </form>
 </body>
